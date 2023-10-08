@@ -1,13 +1,11 @@
 import React from "react";
 import "../components/style.css"
+
 import Logo from "./images/Logo main.png"
 export default function Home(){
 
     return(
         <div>
-
-
-
             <nav className="navbar fixed-top navbar-expand-lg container-fluid p-4">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="index.html"><p style={{color:"#fdc449", fontSize:'60px'}}>▫ᵒ༙༙྇𝗔𝗰𝘁 𝗡𝗼𝗡</p></a>
@@ -110,12 +108,12 @@ export default function Home(){
                     </div>
                 </div>
             </section>
-            <section id="about">
+            <section id="about" >
                 <div style={{overflow: 'hidden'}}>
                     <div className="container-fluid border-bottom" data-aos="zoom-out">
                         <div className="container">
                             <div className="row align-items-center ">
-                                <div className="col-md-6 padding-medium pe-5 border-end">
+                                <div className="col-md-6 px-5 padding-medium pe-5 border-end">
                                     <p className="header-top mb-3">Why choose us</p>
                                     <h2 className="display-4 ">always remember turbo to keep your car clean</h2>
                                 </div>
@@ -174,10 +172,10 @@ export default function Home(){
                     </div>
                 </div>
             </section>
-            <section id="project" className="py-5" style={{backgroundImage: 'url(images/project-img.jpg)'}}>
+            <section id="project" className="py-5" style={{backgroundImage: 'url(https://hapotravel.com/wp-content/uploads/2023/04/tron-bo-25-hinh-nen-den-dep-mat-cap-nhat-moi-nhat_15.jpg)'}}>
                 <div style={{overflow: 'hidden'}}>
                     <div data-aos="zoom-out">
-                        <div className="container position-relative d-sm-flex py-5 mt-5 mb-2">
+                        <div className="px-5 container position-relative d-sm-flex py-5 mt-5 mb-2">
                             <div>
                                 <p className="header-top mb-3">Gallery</p>
                                 <h2 className=" text-white display-4 ">Latest Projects</h2>
@@ -187,16 +185,16 @@ export default function Home(){
                                 <iconify-icon icon="teenyicons:arrow-right-solid" className="icon-arrow-right" />
                             </div>
                         </div>
-                        <div className="container-fluid">
+                        <div className="container px-5">
                             <div className="swiper project-swiper mb-4">
                                 <div className="swiper-wrapper">
                                     <div className="swiper-slide">
                                         <div className="item">
                                             <a href="images/project1.jpg" title="Car Wash" className="image-link">
-                                                <img className="portfolio-img img-fluid" src="images/project1.jpg" alt="" />
+                                                <img className="portfolio-img img-fluid" style={{width:'300px'}} src="https://m.media-amazon.com/images/I/61oj9XZWkML._AC_UF1000,1000_QL80_.jpg" alt="" />
                                                 <div className="description position-absolute top-50 start-50 translate-middle text-center p-3">
-                                                    <p className="text-white">BMW Car</p>
-                                                    <h3 className="text-white">External Hand Wash</h3>
+                                                    <p style={{color:'#f8f7f6', background:'#575050'}}>CB1808</p>
+                                                    <h3 style={{color:'#fcfbfb',background:'#575050'}}>with mysterious green</h3>
                                                 </div>
                                             </a>
                                         </div>
@@ -204,10 +202,10 @@ export default function Home(){
                                     <div className="swiper-slide">
                                         <div className="item">
                                             <a href="images/project2.jpg" title="Car Wash" className="image-link">
-                                                <img className="portfolio-img img-fluid" src="images/project2.jpg" alt="" />
+                                                <img className="portfolio-img img-fluid" style={{width:'300px'}} src="https://m.media-amazon.com/images/I/61s6l77J98L._AC_UF1000,1000_QL80_.jpg" alt="" />
                                                 <div className="description position-absolute top-50 start-50 translate-middle text-center p-3">
-                                                    <p className="text-white">BMW Car</p>
-                                                    <h3 className="text-white">External Hand Wash</h3>
+                                                    <p style={{color:'#f8f7f6', background:'#575050'}}>CB1911</p>
+                                                    <h3 style={{color:'#fcfbfb',background:'#575050'}}>with mysterious black</h3>
                                                 </div>
                                             </a>
                                         </div>
@@ -215,10 +213,10 @@ export default function Home(){
                                     <div className="swiper-slide">
                                         <div className="item">
                                             <a href="images/project3.jpg" title="Car Wash" className="image-link">
-                                                <img className="portfolio-img img-fluid" src="images/project3.jpg" alt="" />
+                                                <img className="portfolio-img img-fluid" style={{width:'300px'}} src="https://eastcoastpaintball.com/cdn/shop/products/Frame788_1200x.png?v=1680489364" alt="" />
                                                 <div className="description position-absolute top-50 start-50 translate-middle text-center p-3">
-                                                    <p className="text-white">BMW Car</p>
-                                                    <h3 className="text-white">External Hand Wash</h3>
+                                                    <p style={{color:'#f8f7f6', background:'#575050'}}>CB1843</p>
+                                                    <h3 style={{color:'#fcfbfb',background:'#575050'}}>with mysterious black</h3>
                                                 </div>
                                             </a>
                                         </div>
@@ -226,58 +224,58 @@ export default function Home(){
                                     <div className="swiper-slide">
                                         <div className="item">
                                             <a href="images/project4.jpg" title="Car Wash" className="image-link">
-                                                <img className="portfolio-img img-fluid" src="images/project4.jpg" alt="" />
+                                                <img className="portfolio-img img-fluid" style={{width:'300px'}} src="https://i.pinimg.com/474x/69/16/6b/69166b4dc8e8bddb3e78b2978dde0c3d.jpg" alt="" />
                                                 <div className="description position-absolute top-50 start-50 translate-middle text-center p-3">
-                                                    <p className="text-white">BMW Car</p>
-                                                    <h3 className="text-white">External Hand Wash</h3>
+                                                    <p style={{color:'#f8f7f6', background:'#575050'}}>CB1568</p>
+                                                    <h3 style={{color:'#fcfbfb',background:'#575050'}}>with mysterious black</h3>
                                                 </div>
                                             </a>
                                         </div>
                                     </div>
-                                    <div className="swiper-slide">
-                                        <div className="item">
-                                            <a href="images/project1.jpg" title="Car Wash" className="image-link">
-                                                <img className="portfolio-img img-fluid" src="images/project1.jpg" alt="" />
-                                                <div className="description position-absolute top-50 start-50 translate-middle text-center p-3">
-                                                    <p className="text-white">BMW Car</p>
-                                                    <h3 className="text-white">External Hand Wash</h3>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div className="swiper-slide">
-                                        <div className="item">
-                                            <a href="images/project2.jpg" title="Car Wash" className="image-link">
-                                                <img className="portfolio-img img-fluid" src="images/project2.jpg" alt="" />
-                                                <div className="description position-absolute top-50 start-50 translate-middle text-center p-3">
-                                                    <p className="text-white">BMW Car</p>
-                                                    <h3 className="text-white">External Hand Wash</h3>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div className="swiper-slide">
-                                        <div className="item">
-                                            <a href="images/project3.jpg" title="Car Wash" className="image-link">
-                                                <img className="portfolio-img img-fluid" src="images/project3.jpg" alt="" />
-                                                <div className="description position-absolute top-50 start-50 translate-middle text-center p-3">
-                                                    <p className="text-white">BMW Car</p>
-                                                    <h3 className="text-white">External Hand Wash</h3>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div className="swiper-slide">
-                                        <div className="item">
-                                            <a href="images/project4.jpg" title="Car Wash" className="image-link">
-                                                <img className="portfolio-img img-fluid" src="images/project4.jpg" alt="" />
-                                                <div className="description position-absolute top-50 start-50 translate-middle text-center p-3">
-                                                    <p className="text-white">BMW Car</p>
-                                                    <h3 className="text-white">External Hand Wash</h3>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
+                                    {/*<div className="swiper-slide">*/}
+                                    {/*    <div className="item">*/}
+                                    {/*        <a href="images/project1.jpg" title="Car Wash" className="image-link">*/}
+                                    {/*            <img className="portfolio-img img-fluid" style={{width:'300px'}} src="https://m.media-amazon.com/images/I/61s6l77J98L._AC_UF1000,1000_QL80_.jpg" alt="" />*/}
+                                    {/*            <div className="description position-absolute top-50 start-50 translate-middle text-center p-3">*/}
+                                    {/*                <p className="text-white">BMW Car</p>*/}
+                                    {/*                <h3 className="text-white">External Hand Wash</h3>*/}
+                                    {/*            </div>*/}
+                                    {/*        </a>*/}
+                                    {/*    </div>*/}
+                                    {/*</div>*/}
+                                    {/*<div className="swiper-slide">*/}
+                                    {/*    <div className="item">*/}
+                                    {/*        <a href="images/project2.jpg" title="Car Wash" className="image-link">*/}
+                                    {/*            <img className="portfolio-img img-fluid" style={{width:'300px'}} src="https://m.media-amazon.com/images/I/51LDn3CzMCL._AC_SY1000_.jpg" alt="" />*/}
+                                    {/*            <div className="description position-absolute top-50 start-50 translate-middle text-center p-3">*/}
+                                    {/*                <p className="text-white">BMW Car</p>*/}
+                                    {/*                <h3 className="text-white">External Hand Wash</h3>*/}
+                                    {/*            </div>*/}
+                                    {/*        </a>*/}
+                                    {/*    </div>*/}
+                                    {/*</div>*/}
+                                    {/*<div className="swiper-slide">*/}
+                                    {/*    <div className="item">*/}
+                                    {/*        <a href="images/project3.jpg" title="Car Wash" className="image-link">*/}
+                                    {/*            <img className="portfolio-img img-fluid" style={{width:'300px'}} src="https://tiimg.tistatic.com/fp/1/007/387/ready-play-paintball-equipment-package-kit-297.jpg" alt="" />*/}
+                                    {/*            <div className="description position-absolute top-50 start-50 translate-middle text-center p-3">*/}
+                                    {/*                <p className="text-white">BMW Car</p>*/}
+                                    {/*                <h3 className="text-white">External Hand Wash</h3>*/}
+                                    {/*            </div>*/}
+                                    {/*        </a>*/}
+                                    {/*    </div>*/}
+                                    {/*</div>*/}
+                                    {/*<div className="swiper-slide">*/}
+                                    {/*    <div className="item">*/}
+                                    {/*        <a href="images/project4.jpg" title="Car Wash" className="image-link">*/}
+                                    {/*            <img className="portfolio-img img-fluid" style={{width:'300px'}} src="https://cdn11.bigcommerce.com/s-n3wox/images/stencil/1280x1280/products/10264/33074/Valken-M17-PP__39796.1655334592.jpg?c=2&imbypass=on" alt="" />*/}
+                                    {/*            <div className="description position-absolute top-50 start-50 translate-middle text-center p-3">*/}
+                                    {/*                <p className="text-white">BMW Car</p>*/}
+                                    {/*                <h3 className="text-white">External Hand Wash</h3>*/}
+                                    {/*            </div>*/}
+                                    {/*        </a>*/}
+                                    {/*    </div>*/}
+                                    {/*</div>*/}
                                 </div>
                             </div>
                         </div>
@@ -295,21 +293,19 @@ export default function Home(){
                         <h2 className="display-4 mb-5 ">Wash packages</h2>
                         <ul className="nav nav-tabs my-3" id="myTab" role="tablist">
                             <li className="nav-item" role="presentation">
-                                <button className="nav-link me-4 px-4 py-1 mb-2 active" id="regular-tab" data-bs-toggle="tab" data-bs-target="#regular-tab-pane" type="button" role="tab" aria-controls="regular-tab-pane" aria-selected="true">regular</button>
+                                <button className="nav-link me-4 px-4 py-1 mb-2 active" id="regular-tab" data-bs-toggle="tab" data-bs-target="#regular-tab-pane" type="button" role="tab" aria-controls="regular-tab-pane" aria-selected="true">Gun</button>
                             </li>
                             <li className="nav-item" role="presentation">
-                                <button className="nav-link me-4 px-4 py-1 mb-2" id="medium-tab" data-bs-toggle="tab" data-bs-target="#medium-tab-pane" type="button" role="tab" aria-controls="medium-tab-pane" aria-selected="false">medium</button>
+                                <button className="nav-link me-4 px-4 py-1 mb-2" id="medium-tab" data-bs-toggle="tab" data-bs-target="#medium-tab-pane" type="button" role="tab" aria-controls="medium-tab-pane" aria-selected="false">mark</button>
                             </li>
                             <li className="nav-item" role="presentation">
-                                <button className="nav-link me-4 px-4 py-1 mb-2" id="van-tab" data-bs-toggle="tab" data-bs-target="#van-tab-pane" type="button" role="tab" aria-controls="van-tab-pane" aria-selected="false">mini van</button>
+                                <button className="nav-link me-4 px-4 py-1 mb-2" id="van-tab" data-bs-toggle="tab" data-bs-target="#van-tab-pane" type="button" role="tab" aria-controls="van-tab-pane" aria-selected="false">armor</button>
                             </li>
                             <li className="nav-item" role="presentation">
-                                <button className="nav-link me-4 px-4 py-1 mb-2" id="truck-tab" data-bs-toggle="tab" data-bs-target="#truck-tab-pane" type="button" role="tab" aria-controls="truck-tab-pane" aria-selected="false">pickup
-                                    truck</button>
+                                <button className="nav-link me-4 px-4 py-1 mb-2" id="truck-tab" data-bs-toggle="tab" data-bs-target="#truck-tab-pane" type="button" role="tab" aria-controls="truck-tab-pane" aria-selected="false">elbow pads</button>
                             </li>
                             <li className="nav-item" role="presentation">
-                                <button className="nav-link me-4 px-4 py-1 mb-2" id="cargo-tab" data-bs-toggle="tab" data-bs-target="#cargo-tab-pane" type="button" role="tab" aria-controls="cargo-tab-pane" aria-selected="false">cargo
-                                    truck</button>
+                                <button className="nav-link me-4 px-4 py-1 mb-2" id="cargo-tab" data-bs-toggle="tab" data-bs-target="#cargo-tab-pane" type="button" role="tab" aria-controls="cargo-tab-pane" aria-selected="false">knee pads</button>
                             </li>
                         </ul>
                         <div className="tab-content" id="myTabContent">
@@ -320,10 +316,7 @@ export default function Home(){
                                             <p className="header-top">Basic</p>
                                             <h2 className="display-5 mb-5">$16.95</h2>
                                             <div className="price-option">
-                                                <p><span className="price-tick">✓</span> Quisque rhoncus</p>
-                                                <p><span className="price-tick">✓</span> Lorem ipsum dolor</p>
-                                                <p><span className="price-tick">✓</span> Vivamus velit mir</p>
-                                                <p><span className="price-tick">✓</span> Elit mir ivamus</p>
+                                                <img className="portfolio-img img-fluid" src="https://impactfull-9512.kxcdn.com/wp-content/uploads/2017/02/CRONUS-OD-2-min.jpg" alt="" />
                                             </div>
                                             <a href="booking.html" className="btn btn-primary mt-3 px-4 py-3 mx-2 ">Book now
                                                 <iconify-icon icon="tabler:arrow-right" className="arrow-icon" />
@@ -335,11 +328,7 @@ export default function Home(){
                                             <p className="header-top">Deluxe</p>
                                             <h2 className="display-5 mb-5">$29.50</h2>
                                             <div className="price-option">
-                                                <p><span className="price-tick">✓</span> Quisque rhoncus</p>
-                                                <p><span className="price-tick">✓</span> Lorem ipsum dolor</p>
-                                                <p><span className="price-tick">✓</span> Vivamus velit mir</p>
-                                                <p><span className="price-tick">✓</span> Velit mir</p>
-                                                <p><span className="price-tick">✓</span> Elit mir ivamus</p>
+                                                <img className="portfolio-img img-fluid" src="https://www.scvillage.com/cdn/shop/files/IMG_4820.jpg?v=1685161334" alt="" />
                                             </div>
                                             <a href="booking.html" className="btn btn-primary mt-3 px-4 py-3 mx-2 ">Book now
                                                 <iconify-icon icon="tabler:arrow-right" className="arrow-icon" />
@@ -351,12 +340,7 @@ export default function Home(){
                                             <p className="header-top">Ultimate</p>
                                             <h2 className="display-5 mb-5">$44.40</h2>
                                             <div className="price-option">
-                                                <p><span className="price-tick">✓</span> Quisque rhoncus</p>
-                                                <p><span className="price-tick">✓</span> Lorem ipsum dolor</p>
-                                                <p><span className="price-tick">✓</span> Vivamus velit mir</p>
-                                                <p><span className="price-tick">✓</span> Elit mir ivamus</p>
-                                                <p><span className="price-tick">✓</span> Lorem ipsum dolor</p>
-                                                <p><span className="price-tick">✓</span> Ipsum dolor</p>
+                                                <img className="portfolio-img img-fluid" src="https://eastcoastpaintball.com/cdn/shop/products/Tippmann_Sierra_One_Black_Paintball_Gun_Front_Oblique_View__73719_1200x1200_crop_center.jpg?v=1669895894" alt="" />
                                             </div>
                                             <a href="booking.html" className="btn btn-primary mt-3 px-4 py-3 mx-2 ">Book now
                                                 <iconify-icon icon="tabler:arrow-right" className="arrow-icon" />
@@ -368,13 +352,7 @@ export default function Home(){
                                             <p className="header-top">ultra ultimate</p>
                                             <h2 className="display-5 mb-5">$70.50</h2>
                                             <div className="price-option">
-                                                <p><span className="price-tick">✓</span> Quisque rhoncus</p>
-                                                <p><span className="price-tick">✓</span> Lorem ipsum dolor</p>
-                                                <p><span className="price-tick">✓</span> Vivamus velit mir</p>
-                                                <p><span className="price-tick">✓</span> It ir ivamus</p>
-                                                <p><span className="price-tick">✓</span> Elit mir ivamus</p>
-                                                <p><span className="price-tick">✓</span> Quisque rhoncus</p>
-                                                <p><span className="price-tick">✓</span> lit mir iamus</p>
+                                                <img className="portfolio-img img-fluid" src="https://i.ebayimg.com/images/g/7ioAAOSwQndgM1nn/s-l600.jpg" alt="" />
                                             </div>
                                             <a href="booking.html" className="btn btn-primary mt-3 px-4 py-3 mx-2 ">Book now
                                                 <iconify-icon icon="tabler:arrow-right" className="arrow-icon" />
@@ -390,10 +368,7 @@ export default function Home(){
                                             <p className="header-top">Basic</p>
                                             <h2 className="display-5 mb-5">$18.95</h2>
                                             <div className="price-option">
-                                                <p><span className="price-tick">✓</span> Quisque rhoncus</p>
-                                                <p><span className="price-tick">✓</span> Lorem ipsum dolor</p>
-                                                <p><span className="price-tick">✓</span> Vivamus velit mir</p>
-                                                <p><span className="price-tick">✓</span> Elit mir ivamus</p>
+                                                <img className="portfolio-img img-fluid" src="https://cdn11.bigcommerce.com/s-utijnwwvdm/images/stencil/1280x1280/products/74320/233647/c214b6b3cce6f650f129e66960f11724da691a0cd5ad28eb29ac905fc8daa33f__65825.1687799681.jpg?c=1" alt="" />
                                             </div>
                                             <a href="booking.html" className="btn btn-primary mt-3 px-4 py-3 mx-2 ">Book now
                                                 <iconify-icon icon="tabler:arrow-right" className="arrow-icon" />
@@ -405,11 +380,7 @@ export default function Home(){
                                             <p className="header-top">Deluxe</p>
                                             <h2 className="display-5 mb-5">$30.50</h2>
                                             <div className="price-option">
-                                                <p><span className="price-tick">✓</span> Quisque rhoncus</p>
-                                                <p><span className="price-tick">✓</span> Lorem ipsum dolor</p>
-                                                <p><span className="price-tick">✓</span> Vivamus velit mir</p>
-                                                <p><span className="price-tick">✓</span> Velit mir</p>
-                                                <p><span className="price-tick">✓</span> Elit mir ivamus</p>
+                                                <img className="portfolio-img img-fluid" src="https://cdn11.bigcommerce.com/s-i7rtxdhtek/images/stencil/1280x1280/products/86666/97612/JTFLEX8GREY-2__23438.1681478850.png?c=1" alt="" />
                                             </div>
                                             <a href="booking.html" className="btn btn-primary mt-3 px-4 py-3 mx-2 ">Book now
                                                 <iconify-icon icon="tabler:arrow-right" className="arrow-icon" />
@@ -421,12 +392,7 @@ export default function Home(){
                                             <p className="header-top">Ultimate</p>
                                             <h2 className="display-5 mb-5">$49.40</h2>
                                             <div className="price-option">
-                                                <p><span className="price-tick">✓</span> Quisque rhoncus</p>
-                                                <p><span className="price-tick">✓</span> Lorem ipsum dolor</p>
-                                                <p><span className="price-tick">✓</span> Vivamus velit mir</p>
-                                                <p><span className="price-tick">✓</span> Elit mir ivamus</p>
-                                                <p><span className="price-tick">✓</span> Lorem ipsum dolor</p>
-                                                <p><span className="price-tick">✓</span> Ipsum dolor</p>
+                                                <img className="portfolio-img img-fluid" src="https://cdn11.bigcommerce.com/s-utijnwwvdm/images/stencil/1280x1280/products/103396/233648/990c08ded97a816232b39322734fa45727953d5e2a84e4e7de9a63968d0ceddf__01983.1687799697.jpg?c=1" alt="" />
                                             </div>
                                             <a href="booking.html" className="btn btn-primary mt-3 px-4 py-3 mx-2 ">Book now
                                                 <iconify-icon icon="tabler:arrow-right" className="arrow-icon" />
@@ -438,13 +404,7 @@ export default function Home(){
                                             <p className="header-top">ultra ultimate</p>
                                             <h2 className="display-5 mb-5">$80.50</h2>
                                             <div className="price-option">
-                                                <p><span className="price-tick">✓</span> Quisque rhoncus</p>
-                                                <p><span className="price-tick">✓</span> Lorem ipsum dolor</p>
-                                                <p><span className="price-tick">✓</span> Vivamus velit mir</p>
-                                                <p><span className="price-tick">✓</span> It ir ivamus</p>
-                                                <p><span className="price-tick">✓</span> Elit mir ivamus</p>
-                                                <p><span className="price-tick">✓</span> Quisque rhoncus</p>
-                                                <p><span className="price-tick">✓</span> lit mir iamus</p>
+                                                <img className="portfolio-img img-fluid" src="https://i.redd.it/96df8i5tolsa1.jpg" alt="" />
                                             </div>
                                             <a href="booking.html" className="btn btn-primary mt-3 px-4 py-3 mx-2 ">Book now
                                                 <iconify-icon icon="tabler:arrow-right" className="arrow-icon" />
@@ -460,10 +420,7 @@ export default function Home(){
                                             <p className="header-top">Basic</p>
                                             <h2 className="display-5 mb-5">$20.95</h2>
                                             <div className="price-option">
-                                                <p><span className="price-tick">✓</span> Quisque rhoncus</p>
-                                                <p><span className="price-tick">✓</span> Lorem ipsum dolor</p>
-                                                <p><span className="price-tick">✓</span> Vivamus velit mir</p>
-                                                <p><span className="price-tick">✓</span> Elit mir ivamus</p>
+                                                <img className="portfolio-img img-fluid" src="https://i.ebayimg.com/images/g/4dYAAOSw3opbbWGa/s-l1200.jpg" alt="" />
                                             </div>
                                             <a href="booking.html" className="btn btn-primary mt-3 px-4 py-3 mx-2 ">Book now
                                                 <iconify-icon icon="tabler:arrow-right" className="arrow-icon" />
@@ -475,11 +432,7 @@ export default function Home(){
                                             <p className="header-top">Deluxe</p>
                                             <h2 className="display-5 mb-5">$33.50</h2>
                                             <div className="price-option">
-                                                <p><span className="price-tick">✓</span> Quisque rhoncus</p>
-                                                <p><span className="price-tick">✓</span> Lorem ipsum dolor</p>
-                                                <p><span className="price-tick">✓</span> Vivamus velit mir</p>
-                                                <p><span className="price-tick">✓</span> Velit mir</p>
-                                                <p><span className="price-tick">✓</span> Elit mir ivamus</p>
+                                                <img className="portfolio-img img-fluid" src="https://sc04.alicdn.com/kf/HTB13sVyd7yWBuNjy0Fpq6yssXXaw.jpg" alt="" />
                                             </div>
                                             <a href="booking.html" className="btn btn-primary mt-3 px-4 py-3 mx-2 ">Book now
                                                 <iconify-icon icon="tabler:arrow-right" className="arrow-icon" />
@@ -491,12 +444,7 @@ export default function Home(){
                                             <p className="header-top">Ultimate</p>
                                             <h2 className="display-5 mb-5">$54.40</h2>
                                             <div className="price-option">
-                                                <p><span className="price-tick">✓</span> Quisque rhoncus</p>
-                                                <p><span className="price-tick">✓</span> Lorem ipsum dolor</p>
-                                                <p><span className="price-tick">✓</span> Vivamus velit mir</p>
-                                                <p><span className="price-tick">✓</span> Elit mir ivamus</p>
-                                                <p><span className="price-tick">✓</span> Lorem ipsum dolor</p>
-                                                <p><span className="price-tick">✓</span> Ipsum dolor</p>
+                                                <img className="portfolio-img img-fluid" src="https://i.pinimg.com/originals/49/13/99/4913992f127b95da4a2ce64fa7c86731.jpg" alt="" />
                                             </div>
                                             <a href="booking.html" className="btn btn-primary mt-3 px-4 py-3 mx-2 ">Book now
                                                 <iconify-icon icon="tabler:arrow-right" className="arrow-icon" />
@@ -508,13 +456,7 @@ export default function Home(){
                                             <p className="header-top">ultra ultimate</p>
                                             <h2 className="display-5 mb-5">$90.50</h2>
                                             <div className="price-option">
-                                                <p><span className="price-tick">✓</span> Quisque rhoncus</p>
-                                                <p><span className="price-tick">✓</span> Lorem ipsum dolor</p>
-                                                <p><span className="price-tick">✓</span> Vivamus velit mir</p>
-                                                <p><span className="price-tick">✓</span> It ir ivamus</p>
-                                                <p><span className="price-tick">✓</span> Elit mir ivamus</p>
-                                                <p><span className="price-tick">✓</span> Quisque rhoncus</p>
-                                                <p><span className="price-tick">✓</span> lit mir iamus</p>
+                                                <img className="portfolio-img img-fluid" src="https://m.media-amazon.com/images/I/614tpPHKfUL._AC_UF894,1000_QL80_.jpg" alt="" />
                                             </div>
                                             <a href="booking.html" className="btn btn-primary mt-3 px-4 py-3 mx-2 ">Book now
                                                 <iconify-icon icon="tabler:arrow-right" className="arrow-icon" />
@@ -530,10 +472,7 @@ export default function Home(){
                                             <p className="header-top">Basic</p>
                                             <h2 className="display-5 mb-5">$30.95</h2>
                                             <div className="price-option">
-                                                <p><span className="price-tick">✓</span> Quisque rhoncus</p>
-                                                <p><span className="price-tick">✓</span> Lorem ipsum dolor</p>
-                                                <p><span className="price-tick">✓</span> Vivamus velit mir</p>
-                                                <p><span className="price-tick">✓</span> Elit mir ivamus</p>
+                                                <img className="portfolio-img img-fluid" src="https://eastcoastpaintball.com/cdn/shop/products/HK_Crash_Camo_Arm_Pad_1_1200x.jpg?v=1653141164" alt="" />
                                             </div>
                                             <a href="booking.html" className="btn btn-primary mt-3 px-4 py-3 mx-2 ">Book now
                                                 <iconify-icon icon="tabler:arrow-right" className="arrow-icon" />
@@ -545,11 +484,7 @@ export default function Home(){
                                             <p className="header-top">Deluxe</p>
                                             <h2 className="display-5 mb-5">$40.50</h2>
                                             <div className="price-option">
-                                                <p><span className="price-tick">✓</span> Quisque rhoncus</p>
-                                                <p><span className="price-tick">✓</span> Lorem ipsum dolor</p>
-                                                <p><span className="price-tick">✓</span> Vivamus velit mir</p>
-                                                <p><span className="price-tick">✓</span> Velit mir</p>
-                                                <p><span className="price-tick">✓</span> Elit mir ivamus</p>
+                                                <img className="portfolio-img img-fluid" src="https://paintball.tippmannparts.com/photos/products/12012-2.jpg" alt="" />
                                             </div>
                                             <a href="booking.html" className="btn btn-primary mt-3 px-4 py-3 mx-2 ">Book now
                                                 <iconify-icon icon="tabler:arrow-right" className="arrow-icon" />
@@ -561,12 +496,7 @@ export default function Home(){
                                             <p className="header-top">Ultimate</p>
                                             <h2 className="display-5 mb-5">$68.40</h2>
                                             <div className="price-option">
-                                                <p><span className="price-tick">✓</span> Quisque rhoncus</p>
-                                                <p><span className="price-tick">✓</span> Lorem ipsum dolor</p>
-                                                <p><span className="price-tick">✓</span> Vivamus velit mir</p>
-                                                <p><span className="price-tick">✓</span> Elit mir ivamus</p>
-                                                <p><span className="price-tick">✓</span> Lorem ipsum dolor</p>
-                                                <p><span className="price-tick">✓</span> Ipsum dolor</p>
+                                                <img className="portfolio-img img-fluid" src="https://www.hkarmy.com/cdn/shop/products/HK_HSTL_Pads_Front_Back_01.jpg?v=1535936317" alt="" />
                                             </div>
                                             <a href="booking.html" className="btn btn-primary mt-3 px-4 py-3 mx-2 ">Book now
                                                 <iconify-icon icon="tabler:arrow-right" className="arrow-icon" />
@@ -578,13 +508,7 @@ export default function Home(){
                                             <p className="header-top">ultra ultimate</p>
                                             <h2 className="display-5 mb-5">$101.50</h2>
                                             <div className="price-option">
-                                                <p><span className="price-tick">✓</span> Quisque rhoncus</p>
-                                                <p><span className="price-tick">✓</span> Lorem ipsum dolor</p>
-                                                <p><span className="price-tick">✓</span> Vivamus velit mir</p>
-                                                <p><span className="price-tick">✓</span> It ir ivamus</p>
-                                                <p><span className="price-tick">✓</span> Elit mir ivamus</p>
-                                                <p><span className="price-tick">✓</span> Quisque rhoncus</p>
-                                                <p><span className="price-tick">✓</span> lit mir iamus</p>
+                                                <img className="portfolio-img img-fluid" src="https://www.hkarmy.com/cdn/shop/products/new-crashpadsarm.jpg?v=1653343937" alt="" />
                                             </div>
                                             <a href="booking.html" className="btn btn-primary mt-3 px-4 py-3 mx-2 ">Book now
                                                 <iconify-icon icon="tabler:arrow-right" className="arrow-icon" />
@@ -600,10 +524,7 @@ export default function Home(){
                                             <p className="header-top">Basic</p>
                                             <h2 className="display-5 mb-5">$50.95</h2>
                                             <div className="price-option">
-                                                <p><span className="price-tick">✓</span> Quisque rhoncus</p>
-                                                <p><span className="price-tick">✓</span> Lorem ipsum dolor</p>
-                                                <p><span className="price-tick">✓</span> Vivamus velit mir</p>
-                                                <p><span className="price-tick">✓</span> Elit mir ivamus</p>
+                                                <img className="portfolio-img img-fluid" src="https://www.hkarmy.com/cdn/shop/products/new-crashpads_1200x.jpg?v=1653343677" alt="" />
                                             </div>
                                             <a href="booking.html" className="btn btn-primary mt-3 px-4 py-3 mx-2 ">Book now
                                                 <iconify-icon icon="tabler:arrow-right" className="arrow-icon" />
@@ -615,11 +536,7 @@ export default function Home(){
                                             <p className="header-top">Deluxe</p>
                                             <h2 className="display-5 mb-5">$78.50</h2>
                                             <div className="price-option">
-                                                <p><span className="price-tick">✓</span> Quisque rhoncus</p>
-                                                <p><span className="price-tick">✓</span> Lorem ipsum dolor</p>
-                                                <p><span className="price-tick">✓</span> Vivamus velit mir</p>
-                                                <p><span className="price-tick">✓</span> Velit mir</p>
-                                                <p><span className="price-tick">✓</span> Elit mir ivamus</p>
+                                                <img className="portfolio-img img-fluid" src="https://cdn11.bigcommerce.com/s-utijnwwvdm/images/stencil/original/products/71641/305932/2116b521d5ab5e80dd975dd24d1eb9c3fc2ea88b1f22948a5d4135520ec49cb7__53938.1693505539.jpg?c=1" alt="" />
                                             </div>
                                             <a href="booking.html" className="btn btn-primary mt-3 px-4 py-3 mx-2 ">Book now
                                                 <iconify-icon icon="tabler:arrow-right" className="arrow-icon" />
@@ -631,12 +548,7 @@ export default function Home(){
                                             <p className="header-top">Ultimate</p>
                                             <h2 className="display-5 mb-5">$97.40</h2>
                                             <div className="price-option">
-                                                <p><span className="price-tick">✓</span> Quisque rhoncus</p>
-                                                <p><span className="price-tick">✓</span> Lorem ipsum dolor</p>
-                                                <p><span className="price-tick">✓</span> Vivamus velit mir</p>
-                                                <p><span className="price-tick">✓</span> Elit mir ivamus</p>
-                                                <p><span className="price-tick">✓</span> Lorem ipsum dolor</p>
-                                                <p><span className="price-tick">✓</span> Ipsum dolor</p>
+                                                <img className="portfolio-img img-fluid" src="https://cdn11.bigcommerce.com/s-utijnwwvdm/images/stencil/1280x1280/products/71643/305956/bc81ede11c2b4206123122d27b1063c929df6816ed3ee0abfbf2fe469f610e1b__65637.1693505565.jpg?c=1" alt="" />
                                             </div>
                                             <a href="booking.html" className="btn btn-primary mt-3 px-4 py-3 mx-2 ">Book now
                                                 <iconify-icon icon="tabler:arrow-right" className="arrow-icon" />
@@ -648,13 +560,7 @@ export default function Home(){
                                             <p className="header-top">ultra ultimate</p>
                                             <h2 className="display-5 mb-5">$150.50</h2>
                                             <div className="price-option">
-                                                <p><span className="price-tick">✓</span> Quisque rhoncus</p>
-                                                <p><span className="price-tick">✓</span> Lorem ipsum dolor</p>
-                                                <p><span className="price-tick">✓</span> Vivamus velit mir</p>
-                                                <p><span className="price-tick">✓</span> It ir ivamus</p>
-                                                <p><span className="price-tick">✓</span> Elit mir ivamus</p>
-                                                <p><span className="price-tick">✓</span> Quisque rhoncus</p>
-                                                <p><span className="price-tick">✓</span> lit mir iamus</p>
+                                                <img className="portfolio-img img-fluid" src="https://cdn11.bigcommerce.com/s-utijnwwvdm/images/stencil/1280x1280/products/69809/305827/fb0b201d662d0d0e008db14e5d666918ef704d43ea791b10f2de6db8fd3ada7e__27612.1693505422.jpg?c=1" alt="" />
                                             </div>
                                             <a href="booking.html" className="btn btn-primary mt-3 px-4 py-3 mx-2 ">Book now
                                                 <iconify-icon icon="tabler:arrow-right" className="arrow-icon" />
@@ -740,7 +646,7 @@ export default function Home(){
                             <img src="images/vid-img.jpg" alt="video" className="video-image img-fluid" />
                         </div>
                         <div className="video-player position-absolute">
-                            <a className="youtube" href="https://www.youtube.com/embed/RLHSvmh4rHw">
+                            <a className="youtube" href="https://youtu.be/cpx2r52E08o?si=XY2xTsL3rr-JraBR">
                                 <iconify-icon icon="ion:play-sharp" className="video-icon p-5" />
                             </a>
                         </div>
