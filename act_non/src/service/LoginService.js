@@ -1,10 +1,8 @@
-
 import jwt_decode from "jwt-decode";
 import axios from "axios";
 
 export const loginByUserName = async (appUser) => {
     try {
-
         const res = await axios.post("http://localhost:8080/api/login", appUser);
         return res;
     }catch (e){
@@ -25,3 +23,12 @@ export const checkRoleAppUser = (roleName) => {
         return checkRole;
     }
 }
+
+export const infoAppUserByJwtToken = () => {
+    const jwtToken = localStorage.getItem("JWT");
+    if (jwtToken) {
+        const result = jwt_decode(jwtToken);
+        console.log(result)
+        return result;
+    }
+};

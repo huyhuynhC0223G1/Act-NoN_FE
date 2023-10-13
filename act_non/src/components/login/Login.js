@@ -23,6 +23,10 @@ export default function Login() {
                 navigate(tempURL);
             } else {
                 navigate('/');
+                Swal.fire({
+                    icon: 'success',
+                    title: '',
+                })
             }
         } catch (e) {
             Swal.fire({
