@@ -217,8 +217,9 @@ h6,
 /* button arrow style  */
 iconify-icon.arrow-icon {
     font-weight: 600;
-    font-size: 16px;
-    margin-bottom: -3px;
+    font-size: 20px;
+    padding-left: 10px;
+    margin-bottom: 3px;
 }
 
 

@@ -6,6 +6,8 @@ import Login from "./components/login/Login";
 import {AxiosBearer} from "./service/AxiosBearer";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import VideoPlayer from "./components/VideoPlayer";
+import DetailProduct from "./components/detailProduct/DetailProduct";
 function App() {
     AxiosBearer();
 
@@ -16,6 +18,8 @@ function App() {
          <Routes>
              <Route path="/" element={<Home />}></Route>
              <Route path="/login" element={<Login />}></Route>
+             <Route path="/video" element={<VideoPlayer />}></Route>
+             <Route path="/product/detail/:id" element={<DetailProduct />}></Route>
          </Routes>
          <Footer></Footer>
      </BrowserRouter>

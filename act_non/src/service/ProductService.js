@@ -17,5 +17,9 @@ export async function getProductList(name, typeName, price, description, page, s
         console.error(error);
         throw error;
     }
+}
 
+export async function getProductById(id){
+    const res = await  axios.get(`http://localhost:8080/api/product/detail/${id}`)
+    return res.data;
 }
