@@ -123,7 +123,9 @@ h6,
 .h6 {
     font-weight: 500;
 }
-
+.toast-position {
+    top: 5rem !important;
+}
 .header-top {
     color: var(--accent-color);
     text-transform: uppercase;

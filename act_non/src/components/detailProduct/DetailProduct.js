@@ -1,10 +1,17 @@
 import React, {useEffect, useState} from "react";
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import * as ProductService from '../../service/ProductService'
+import {infoAppUserByJwtToken} from "../../service/LoginService";
+import Swal from "sweetalert2";
+import * as CartService from "../../service/CartService";
+import {ToastContainer, toast} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function DetailProduct() {
     const param = useParams();
+    const navigate = useNavigate();
     const [productDetail, setProductDetail] = useState({});
+    const [quantity, setQuantity] = useState(1);
     const getProductById = async () => {
         const data = await ProductService.getProductById(param.id)
         setProductDetail(data);
@@ -12,34 +19,36 @@ export default function DetailProduct() {
     useEffect(() => {
         getProductById();
         document.title = "ActNoN - Detail Product";
+        window.scroll({
+            top: 0,
+
+            behavior: "smooth",
+        });
     }, []);
+    console.log(quantity)
+    const addProductToCart = async (id,quantity, e) => {
+        e.preventDefault();
+        const isLoggedIn = infoAppUserByJwtToken();
+        if (!isLoggedIn) {
+            Swal.fire("Please log in to your account!", "", "warning");
+            navigate("/login");
+        } else {
+            const response = await CartService.addProductToCart(id,quantity);
+            toast.success("Added product successfully");
+        }
+    };
+
     return (
         <>
-            <div className="super_container" style={{
+            <div  style={{ height:'300px',
                 backgroundImage: 'url(https://hapotravel.com/wp-content/uploads/2023/04/tron-bo-25-hinh-nen-den-dep-mat-cap-nhat-moi-nhat_15.jpg)'}}>
-
+                <h1 className="text-uppercase  text-center"
+                style={{paddingTop:'220px', color:'white'}}>Detail product</h1>
+            </div>
+            <div className="super_container">
                 <div className="single_product" >
                     <div className="container" style={{ padding: '11px'}}>
                         <div className="row" style={{marginTop:'150px'}}>
-                            {/*<div className="col-lg-2 order-lg-1 order-2">*/}
-                            {/*    <ul className="image_list">*/}
-                            {/*        <li data-image="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565713229/single_4.jpg">*/}
-                            {/*            <img*/}
-                            {/*                src="https://i.pinimg.com/474x/69/16/6b/69166b4dc8e8bddb3e78b2978dde0c3d.jpg"*/}
-                            {/*                alt=""/>*/}
-                            {/*        </li>*/}
-                            {/*        <li data-image="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565713228/single_2.jpg">*/}
-                            {/*            <img*/}
-                            {/*                src="https://eastcoastpaintball.com/cdn/shop/products/Frame788_1200x.png?v=1680489364"*/}
-                            {/*                alt=""/>*/}
-                            {/*        </li>*/}
-                            {/*        <li data-image="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565713228/single_3.jpg">*/}
-                            {/*            <img*/}
-                            {/*                src="https://m.media-amazon.com/images/I/61s6l77J98L._AC_UF1000,1000_QL80_.jpg"*/}
-                            {/*                alt=""/>*/}
-                            {/*        </li>*/}
-                            {/*    </ul>*/}
-                            {/*</div>*/}
                             <div className="col-lg-4 order-lg-2 order-1" >
                                 <div className="image_selected"><img
                                     src={productDetail.img}
@@ -86,17 +95,7 @@ export default function DetailProduct() {
                                             </div>
                                             <div className="col-md-7"/>
                                         </div>
-                                        {/*                            <div class="row" style="margin-top: 15px;">*/}
-                                        {/*                                <div class="col-xs-6" style="margin-left: 15px;"><span class="product_options">RAM Options</span><br>*/}
-                                        {/*                                    <button class="btn btn-primary btn-sm">4 GB</button>*/}
-                                        {/*                                    <button class="btn btn-primary btn-sm">8 GB</button>*/}
-                                        {/*                                    <button class="btn btn-primary btn-sm">16 GB</button>*/}
-                                        {/*                                </div>*/}
-                                        {/*                                <div class="col-xs-6" style="margin-left: 55px;"><span class="product_options">Storage Options</span><br>*/}
-                                        {/*                                    <button class="btn btn-primary btn-sm">500 GB</button>*/}
-                                        {/*                                    <button class="btn btn-primary btn-sm">1 TB</button>*/}
-                                        {/*                                </div>*/}
-                                        {/*                            </div>*/}
+
                                     </div>
                                     <hr className="singleline"/>
                                     <div className="order_info d-flex flex-row">
@@ -105,8 +104,10 @@ export default function DetailProduct() {
                                     </div>
                                     <div className="row">
                                         <div className="col-xs-6" style={{marginLeft: '13px'}}>
-                                            <div className="product_quantity"><span>QTY: </span> <input
-                                                id="quantity_input" type="text" pattern="[0-9]*" defaultValue={1}/>
+                                            <div className="product_quantity"><span>QTY: </span>
+                                                <input id="quantity_input" type="number" pattern="[0-9]*"
+                                                       value={quantity}
+                                                       onChange={(e) => setQuantity(e.target.value)}/>
                                                 <div className="quantity_buttons">
                                                     <div id="quantity_inc_button"
                                                          className="quantity_inc quantity_control"><i
@@ -118,7 +119,11 @@ export default function DetailProduct() {
                                             </div>
                                         </div>
                                         <div className="col-xs-6">
-                                            <button type="button" className="btn shop-button text-white" style={{background:'#ffc107'}}>Add to Cart
+                                            <button type="button"
+                                                    className="btn shop-button text-white"
+                                                    style={{background:'#ffc107'}}
+                                                    onClick={(e) => addProductToCart(productDetail.id,quantity , e)}>
+                                                Add to Cart
                                             </button>
                                             {/*<button type="button" className="btn shop-button">Buy Now*/}
                                             {/*</button>*/}
@@ -130,6 +135,7 @@ export default function DetailProduct() {
                         </div>
                     </div>
                 </div>
+                <ToastContainer autoClose={1000} className="toast-position"/>
             </div>
 
         </>

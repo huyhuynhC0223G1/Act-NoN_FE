@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import * as LoginService from '../../service/LoginService';
 import Swal from "sweetalert2";
 
@@ -25,7 +25,7 @@ export default function Login() {
                 navigate('/');
                 Swal.fire({
                     icon: 'success',
-                    title: '',
+                    title: 'Logged in successfully',
                 })
             }
         } catch (e) {
@@ -55,15 +55,19 @@ export default function Login() {
                     <section className="login">
                         <div className="login_box">
                             <div className="left">
-                                <div className="top_link"><a href="#"><img
-                                    src="https://drive.google.com/u/0/uc?id=16U__U5dJdaTfNGobB_OpwAJ73vM50rPV&export=download"
-                                    alt=""/>Return home</a></div>
+                                <div className="top_link">
+                                    <Link to={"/"}><a href=""><img
+                                        src="https://drive.google.com/u/0/uc?id=16U__U5dJdaTfNGobB_OpwAJ73vM50rPV&export=download"
+                                        alt=""/>Return home</a></Link>
+                                </div>
                                 <div className="contact">
                                     <div>
                                         <h3>SIGN IN</h3>
-                                        <Field type="text" className="form-control border border-primary" placeholder="User Name"
+                                        <Field type="text" className="form-control border border-primary"
+                                               placeholder="User Name"
                                                name="username"/>
-                                        <Field type="password" className="form-control border border-primary" placeholder="Password"
+                                        <Field type="password" className="form-control border border-primary"
+                                               placeholder="Password"
                                                name="password"/>
                                         <button className="submit_login" type="submit">LET'S GO</button>
                                     </div>
@@ -71,7 +75,7 @@ export default function Login() {
                             </div>
                             <div className="right">
                                 <div className="right-text">
-                                    <h2 style={{color:'#fdc449'}}>RaiNoN</h2>
+                                    <h2 style={{color: '#fdc449'}}>RaiNoN</h2>
                                     <br/>
                                     <h5 style={{color: "white"}}>If you don't try.</h5>
                                     <h5 style={{color: "white"}}> You will never know what you can do.</h5>
