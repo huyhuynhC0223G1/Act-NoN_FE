@@ -13,6 +13,7 @@ export const loginByUserName = async (appUser) => {
 
 export const addJwtTokenToLocalStorage = (jwtToken) => {
     localStorage.setItem("JWT", jwtToken);
+
 }
 
 export const checkRoleAppUser = (roleName) => {

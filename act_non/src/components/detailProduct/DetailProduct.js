@@ -21,7 +21,6 @@ export default function DetailProduct() {
         document.title = "ActNoN - Detail Product";
         window.scroll({
             top: 0,
-
             behavior: "smooth",
         });
     }, []);
@@ -40,16 +39,17 @@ export default function DetailProduct() {
 
     return (
         <>
-            <div  style={{ height:'300px',
+            <div  style={{ height:'110px',
                 backgroundImage: 'url(https://hapotravel.com/wp-content/uploads/2023/04/tron-bo-25-hinh-nen-den-dep-mat-cap-nhat-moi-nhat_15.jpg)'}}>
-                <h1 className="text-uppercase  text-center"
-                style={{paddingTop:'220px', color:'white'}}>Detail product</h1>
             </div>
-            <div className="super_container">
+            <div className="super_container" style={{background:'#eeeeee'}}>
                 <div className="single_product" >
                     <div className="container" style={{ padding: '11px'}}>
-                        <div className="row" style={{marginTop:'150px'}}>
+                        <h1 className="text-uppercase  text-center"
+                            style={{color:'#ffc107', paddingTop:'50px'}}>Detail product</h1>
+                        <div className="row" style={{marginTop:'50px'}}>
                             <div className="col-lg-4 order-lg-2 order-1" >
+
                                 <div className="image_selected"><img
                                     src={productDetail.img}
                                     alt=""/>
@@ -82,20 +82,10 @@ export default function DetailProduct() {
                                         <div className="row">
                                             <div className="col-md-5">
                                                 <div className="br-dashed">
-                                                    <div className="row">
-                                                        <div className="col-md-3 col-xs-3"><img
-                                                            src="https://img.icons8.com/color/48/000000/price-tag.png"/>
-                                                        </div>
-                                                        <div className="col-md-9 col-xs-9">
-                                                            <div className="pr-info"><span className="break-all">Get 5% instant discount + 10X rewards @ RENTOPC</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
                                                 </div>
                                             </div>
                                             <div className="col-md-7"/>
                                         </div>
-
                                     </div>
                                     <hr className="singleline"/>
                                     <div className="order_info d-flex flex-row">
@@ -104,9 +94,10 @@ export default function DetailProduct() {
                                     </div>
                                     <div className="row">
                                         <div className="col-xs-6" style={{marginLeft: '13px'}}>
-                                            <div className="product_quantity"><span>QTY: </span>
+                                            <div className="product_quantity"><span>QUANTITY: </span>
                                                 <input id="quantity_input" type="number" pattern="[0-9]*"
                                                        value={quantity}
+                                                       style={{borderRadius:'5px', width:'107px'}}
                                                        onChange={(e) => setQuantity(e.target.value)}/>
                                                 <div className="quantity_buttons">
                                                     <div id="quantity_inc_button"
@@ -121,7 +112,7 @@ export default function DetailProduct() {
                                         <div className="col-xs-6">
                                             <button type="button"
                                                     className="btn shop-button text-white"
-                                                    style={{background:'#ffc107'}}
+                                                    style={{background:'#ffc107', borderRadius:'5px', marginTop:'10px'}}
                                                     onClick={(e) => addProductToCart(productDetail.id,quantity , e)}>
                                                 Add to Cart
                                             </button>

@@ -47,7 +47,6 @@ body {
     --background-color: #F6F6F6;
 
 
-
     /* bootstrap */
     --bs-body-font-family: 'Nunito Sans', sans-serif;
     --bs-body-font-size: 18px;
@@ -123,9 +122,11 @@ h6,
 .h6 {
     font-weight: 500;
 }
+
 .toast-position {
     top: 5rem !important;
 }
+
 .header-top {
     color: var(--accent-color);
     text-transform: uppercase;
@@ -177,7 +178,7 @@ h6,
     text-transform: uppercase;
     letter-spacing: 0.075rem;
     --bs-btn-padding-x: 3rem;
-    --bs-btn-padding-y: 1.4rem;
+    --bs-btn-padding-y: 1rem;
     --bs-btn-font-weight: 600;
     --bs-btn-border-radius: 0px;
 }
@@ -243,7 +244,6 @@ iconify-icon.hamburger-menu {
     color: var(--bs-light);
     font-size: 30px;
 }
-
 
 
 /*---- navigation section style start ----*/
@@ -396,6 +396,26 @@ span.price-tick {
     justify-content: center;
 }
 
+.header-btn {
+    position: relative;
+}
+
+.cart-number {
+    position: absolute;
+    top: -14px;
+    right: -5px;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    opacity: 100%;
+    font-size: 12px;
+    border: 1px solid #bfbfbf;
+    color: #ffffff;
+}
+
 iconify-icon.video-icon {
     font-size: 66px;
     color: var(--bs-light);
@@ -518,8 +538,6 @@ a.icon-link:hover:after {
 }
 
 
-
-
 /*--------------------------------------------------------------
 reviews section style start
 --------------------------------------------------------------*/
@@ -539,7 +557,6 @@ iconify-icon.quote {
 .rate {
     color: var(--accent-color);
 }
-
 
 
 /*--------------------------------------------------------------

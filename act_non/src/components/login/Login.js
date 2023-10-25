@@ -16,6 +16,7 @@ export default function Login() {
     const loginByUserName = async (user) => {
         try {
             const result = await LoginService.loginByUserName(user);
+            localStorage.setItem("id", result.data.id);
             LoginService.addJwtTokenToLocalStorage(result.data.token);
             const tempURL = localStorage.getItem("tempURL");
             console.log(tempURL)

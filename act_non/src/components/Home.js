@@ -11,13 +11,15 @@ import {infoAppUserByJwtToken} from "../service/LoginService";
 import "react-toastify/dist/ReactToastify.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import {useDispatch} from "react-redux";
+import {getAllCarts} from "./cart/redux/cartAction";
 
 export default function Home() {
     const navigate = useNavigate();
     const [productList, setProductList] = useState([]);
     const [currentPage, setCurrentPage] = useState(0);
     const [totalPages, setTotalPages] = useState(0);
-
+    const dispatch = useDispatch();
     const [searchName, setSearchName] = useState("");
     const [typeName, setTypeName] = useState("");
     const [price, setPrice] = useState("");
@@ -62,6 +64,7 @@ export default function Home() {
             navigate("/login");
         } else {
             const response = await CartService.addProductToCart(id, 1);
+            dispatch(getAllCarts(localStorage.getItem("id")));
             toast.success("Added product successfully");
         }
     };
@@ -102,9 +105,11 @@ export default function Home() {
                                 you
                                 to win.</p>
                             <h2 className="display-1 text-white mb-5">PaintBall equipment supply</h2>
-                            <button type="button" className="btn btn-outline-primary align-items-center ">
-                                ALL PRODUCT >>
-                            </button>
+                            <Link to={`/product`}>
+                                <button type="button" className="btn btn-outline-primary align-items-center ">
+                                    ALL PRODUCT >>
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -211,14 +216,14 @@ export default function Home() {
                                         .map((product) => (
                                             <div className="col-lg pb-4 px-3" key={product.id}>
                                                 <div className="py-5 plan-post text-center">
-                                                    <p className="header-top">{product.name}</p>
-                                                    <h2 className="display-5 mb-5">$ {product.price}</h2>
+                                                    <h2 className=" text-white">{product.name}</h2>
+                                                    <h2 className=" mb-5 text-white">$ {product.price}</h2>
                                                     <div className="price-option">
                                                         <Link to={`/product/detail/${product.id}`}>
                                                             <a>
                                                                 <img
                                                                     className="portfolio-img img-fluid"
-                                                                    style={{ maxHeight: '272px' }}
+                                                                    style={{maxHeight: '272px'}}
                                                                     src={product.img}
                                                                     alt=""
                                                                 />
@@ -239,9 +244,11 @@ export default function Home() {
                             </div>
                         </div>
                         <div className="text-center pb-5 mb-5">
-                            <a href="project.html" className="btn btn-primary mt-5 ">ALL Products <iconify-icon
-                                icon="tabler:arrow-right" className="arrow-icon"/>
-                            </a>
+                            <Link to={`/product`}>
+                                <a href="" className="btn btn-primary mt-5 ">ALL Products <iconify-icon
+                                    icon="tabler:arrow-right" className="arrow-icon"/>
+                                </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

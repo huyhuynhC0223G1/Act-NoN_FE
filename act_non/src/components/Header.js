@@ -4,6 +4,10 @@ import {BiLogOutCircle, BiUser} from "react-icons/bi";
 import Swal from "sweetalert2";
 import * as LoginService from '../service/LoginService';
 import {FiShoppingCart} from "react-icons/fi";
+import * as CartService from "../service/CartService";
+import {useDispatch, useSelector} from "react-redux";
+import {getAllCarts} from "./cart/redux/cartAction";
+
 
 export default function Header() {
     const navigate = useNavigate();
@@ -14,6 +18,19 @@ export default function Header() {
     const [showMenu, setShowMenu] = useState(false);
     const [showLogin, setShowLogin] = useState(true);
     const location = useLocation();
+
+    // const [cartList, setCartList] = useState([]);
+
+    const carts = useSelector((state) => state.cart);
+    const dispatch = useDispatch();
+
+    console.log(carts.length)
+    // const getCartList = async () => {
+    //     const data = await CartService.getCartList()
+    //     console.log(data)
+    //     setCartList(data);
+    // }
+
     useEffect(() => {
         if (location.pathname === "/") {
             setShowLogin(true);
@@ -37,11 +54,14 @@ export default function Header() {
             setUserName(response.sub);
         }
         setJwtToken(localStorage.getItem("JWT"));
+        const userId = localStorage.getItem("id");
+        dispatch(getAllCarts(userId))
         console.log(userName);
     };
 
     useEffect(() => {
         getUserName();
+        // getCartList();
     }, [localStorage.getItem("JWT")]);
     const handleLogOut = () => {
         localStorage.removeItem("JWT");
@@ -55,14 +75,11 @@ export default function Header() {
     };
     return (
         <>
-            <nav className="navbar fixed-top navbar-expand-lg container-fluid">
+            <nav className="navbar navbar-expand-lg container-fluid" style={{background: '#121818'}}>
                 <div className="container-fluid">
                     <Link to={'/'}><a className="navbar-brand">
                         <p style={{color: "#fdc449", fontSize: '60px', paddingTop: '30px'}}>𝗔𝗰𝘁 𝗡𝗼𝗡</p></a></Link>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                        <iconify-icon icon="system-uicons:menu-hamburger" className="hamburger-menu"/>
-                    </button>
+
                     <div className="offcanvas-body">
                         {showMenu && (
                             <ul className="navbar-nav align-items-center justify-content-end justify-content-xxl-center flex-grow-1 pe-3">
@@ -95,49 +112,62 @@ export default function Header() {
                         )}
                     </div>
                     {localStorage.getItem("JWT") && showLogin && (
-                    <div className="  d-flex mt-5 mt-lg-0 ps-lg-5 align-items-center justify-content-end "
-                         style={{color: "#fdc449", fontSize: '25px'}}>
-                        {localStorage.getItem("JWT") && (
-                        <a style={{color: "#3189c0", fontSize: '25px'}}
-                            href="">{userName}  <BiUser/></a>
-                        )}
-                        <Link to="/cart" href="" className="header-btn header-cart"
-                              style={{paddingLeft: '20px'}}>
-                            <FiShoppingCart className="me-3 ms-0" size={25}
-                                            style={{color: "#fdc449",}}/>
-                            {/*<span className="cart-number">{carts.length}</span>*/}
-                        </Link>
-                    </div>
-                        )}
+                        <div className="  d-flex mt-5 mt-lg-0  align-items-center justify-content-end "
+                             style={{color: "#fdc449", fontSize: '25px'}}>
+                            <Link to="/cart" className="header-btn header-cart"
+                                  style={{paddingLeft: '20px'}}>
+                                <FiShoppingCart className="me-3 ms-0" size={25}
+                                                style={{color: "#fdc449",}}/>
+                                <span className="cart-number">{carts.length}</span>
+                            </Link>
+                            {localStorage.getItem("JWT") && (
+                                <div className="dropdown" >
+                                    <button className="btn dropdown-toggle text-end" type="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false" style={{color: '#0688f3'}}>
+                                        {userName} <BiUser/>
+                                    </button>
+                                    <ul className="dropdown-menu">
+                                        <Link to={`/product`}>
+                                            <li><a className="dropdown-item">All Product</a></li>
+                                        </Link>
+                                        <Link to={`/history`}>
+                                            <li><a className="dropdown-item">Purchase history</a></li>
+                                        </Link>
+                                        <div className="user-dropdown-list">
+                                            {localStorage.getItem("JWT") ? (
+                                                <>
+                                                    <Link className="user-dropdown-item " style={{
+                                                        display: 'flex',
+                                                        alignItems: 'center',
+                                                        color: 'white',
+                                                        marginRight: '10px'
+                                                    }}>
+                                                        <BiLogOutCircle className="me-3 ms-0 " size={25}
+                                                                        style={{color: "#fdc449"}}
+                                                                        onClick={() => handleLogOut()}/>
+                                                        <div
+                                                            className="dropdown-text" style={{color: '#fdc449'}}
+                                                            onClick={() => handleLogOut()}
+                                                        >
+                                                            LOGOUT
+                                                        </div>
+                                                    </Link>
+                                                </>
+                                            ) : null}
+                                        </div>
+                                    </ul>
+                                </div>
+                            )}
+
+                        </div>
+                    )}
                     <div className=" d-flex mt-5 mt-lg-0 ps-lg-5 align-items-center justify-content-end "
                          style={{color: "#fdc449", fontSize: '25px'}}>
-                        <div className="user-dropdown-list">
-                            {!localStorage.getItem("JWT") && showLogin && (
-                                <Link to={`/login`}>
-                                    <a className="text-uppercase" style={{color: '#fdc449'}}>LOGIN</a>
-                                </Link>
-                            )}
-                            {localStorage.getItem("JWT") ? (
-                                <>
-                                    <Link className="user-dropdown-item " style={{
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        color: 'white',
-                                        marginRight: '10px'
-                                    }}>
-                                        <BiLogOutCircle className="me-3 ms-0 " size={25}
-                                                        style={{color: "#fdc449"}}
-                                                        onClick={() => handleLogOut()}/>
-                                        <div
-                                            className="dropdown-text" style={{color: '#fdc449'}}
-                                            onClick={() => handleLogOut()}
-                                        >
-                                            LOGOUT
-                                        </div>
-                                    </Link>
-                                </>
-                            ) : null}
-                        </div>
+                        {!localStorage.getItem("JWT") && showLogin && (
+                            <Link to={`/login`}>
+                                <a className="text-uppercase" style={{color: '#fdc449'}}>LOGIN</a>
+                            </Link>
+                        )}
                     </div>
                 </div>
             </nav>
