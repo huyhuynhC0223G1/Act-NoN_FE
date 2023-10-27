@@ -75,7 +75,7 @@ export default function Header() {
     };
     return (
         <>
-            <nav className="navbar navbar-expand-lg container-fluid" style={{background: '#121818'}}>
+            <nav className="navbar fixed-top navbar-expand-lg container-fluid" style={{background: '#121818'}}>
                 <div className="container-fluid">
                     <Link to={'/'}><a className="navbar-brand">
                         <p style={{color: "#fdc449", fontSize: '60px', paddingTop: '30px'}}>𝗔𝗰𝘁 𝗡𝗼𝗡</p></a></Link>

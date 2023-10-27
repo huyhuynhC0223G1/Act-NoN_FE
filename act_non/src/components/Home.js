@@ -41,7 +41,7 @@ export default function Home() {
                 setTotalPages(1);
                 Swal.fire({
                     icon: 'error',
-                    title: 'Không tìm thấy dữ liệu!',
+                    title: 'Not data found!',
                     showConfirmButton: false,
                     timer: 1500,
                 });
@@ -93,7 +93,7 @@ export default function Home() {
     const filteredProducts = productList.filter((product) => product.productType.name === activeTab);
 
     return (
-        <div>
+        <div style={{marginTop:'120px'}}>
             <section id="hero" style={{
                 backgroundImage: 'url(https://i.pinimg.com/originals/23/ea/fe/23eafe44f1d4782b3a2f6fbf9c9b891c.jpg)',
                 height: '800px'
@@ -216,9 +216,9 @@ export default function Home() {
                                         .map((product) => (
                                             <div className="col-lg pb-4 px-3" key={product.id}>
                                                 <div className="py-5 plan-post text-center">
-                                                    <h2 className=" text-white">{product.name}</h2>
-                                                    <h2 className=" mb-5 text-white">$ {product.price}</h2>
-                                                    <div className="price-option">
+                                                    <h2 className=" text-white" >{product.name}</h2>
+                                                    <h2 className=" mb-5 " style={{color:'red'}}>$ {product.price}</h2>
+                                                    <div className="price-option" >
                                                         <Link to={`/product/detail/${product.id}`}>
                                                             <a>
                                                                 <img
@@ -316,7 +316,7 @@ export default function Home() {
                                     aria-selected={activeTab === 'Glove'}
                                     onClick={() => handleTabClick('Glove')}
                                 >
-                                    Elbow pads
+                                    Glove
                                 </button>
                             </li>
                             <li className="nav-item" role="presentation">
@@ -461,7 +461,7 @@ export default function Home() {
             </section>
             <section id="blog" className="my-5">
                 <div style={{overflow: 'hidden'}}>
-                    <div className="container  py-5" data-aos="zoom-out">
+                    <div className="container" style={{marginTop:'100px'}} data-aos="zoom-out">
                         <p className="text-center header-top">Our blog</p>
                         <h2 className="text-center display-4 mb-5 ">Latest posts</h2>
                         <div className="row blog-content border-bottom">
@@ -473,10 +473,10 @@ export default function Home() {
                                     </div>
                                     <div className="ms-5 mt-1">
                                         <a href className="text-decoration-none">
-                                            <p className="blog-topic text-uppercase mb-1">Car - Tips</p>
+                                            <p className="blog-topic text-uppercase mb-1">Gun - Tips</p>
                                         </a>
                                         <a href="#" className="text-decoration-none">
-                                            <h4 className="blog-title">Main thing to remember while washing car</h4>
+                                            <h4 className="blog-title">MAIN THINGS TO REMEMBER WHEN BUYING A GUN</h4>
                                         </a>
                                     </div>
                                 </div>
@@ -491,11 +491,10 @@ export default function Home() {
                                     </div>
                                     <div className="ms-5 ">
                                         <a href className="text-decoration-none">
-                                            <p className="blog-topic text-uppercase mb-1">Car - Tips</p>
+                                            <p className="blog-topic text-uppercase mb-1">Mark - Tips</p>
                                         </a>
                                         <a href="" className="text-decoration-none">
-                                            <h4 className="blog-title">Important points for keeping your car
-                                                clean</h4>
+                                            <h4 className="blog-title">MAIN THINGS TO REMEMBER WHEN BUYING A Mark</h4>
                                         </a>
                                     </div>
                                 </div>
@@ -510,11 +509,10 @@ export default function Home() {
                                     </div>
                                     <div className="ms-5 mt-1">
                                         <a href className="text-decoration-none">
-                                            <p className="blog-topic text-uppercase mb-1">Car - Tips</p>
+                                            <p className="blog-topic text-uppercase mb-1">Armor - Tips</p>
                                         </a>
                                         <a href="#" className="text-decoration-none">
-                                            <h4 className="blog-title">10 best car wash to Book your car wash
-                                                online</h4>
+                                            <h4 className="blog-title">MAIN THINGS TO REMEMBER WHEN BUYING A ARMOR</h4>
                                         </a>
                                     </div>
                                 </div>

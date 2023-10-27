@@ -11,6 +11,9 @@ export default function Login() {
 
     useEffect(() => {
         document.title = 'ActNoN - Login'
+        window.scroll({
+            top: 0,
+        });
     }, [])
 
     const loginByUserName = async (user) => {

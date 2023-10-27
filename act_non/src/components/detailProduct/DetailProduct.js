@@ -1,22 +1,53 @@
 import React, {useEffect, useState} from "react";
-import {useNavigate, useParams} from "react-router-dom";
+import {Link, useNavigate, useParams} from "react-router-dom";
 import * as ProductService from '../../service/ProductService'
 import {infoAppUserByJwtToken} from "../../service/LoginService";
 import Swal from "sweetalert2";
 import * as CartService from "../../service/CartService";
 import {ToastContainer, toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import {useDispatch} from "react-redux";
+import {getAllCarts} from "../cart/redux/cartAction";
 
 export default function DetailProduct() {
     const param = useParams();
     const navigate = useNavigate();
     const [productDetail, setProductDetail] = useState({});
     const [quantity, setQuantity] = useState(1);
+    const [isSearching, setIsSearching] = useState(false);
+    const [productList, setProductList] = useState([]);
+    const [searchName, setSearchName] = useState("");
+    const [typeName, setTypeName] = useState("");
+    const [price, setPrice] = useState("");
+    const [description, setDescription] = useState("");
+    const dispatch = useDispatch();
     const getProductById = async () => {
         const data = await ProductService.getProductById(param.id)
         setProductDetail(data);
     }
+
+    const getListProduct = async (page) => {
+        if (isSearching) {
+            const dataSearch = await ProductService.getProductList(searchName, typeName, price, description, page, 4)
+            setProductList(dataSearch.content);
+        } else {
+            const data = await ProductService.getProductList("", "", "", "", page, 4)
+            if (data.content != null || data.content != undefined) {
+                setProductList(data.content);
+
+            } else {
+                setProductList([]);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Not found!',
+                    showConfirmButton: false,
+                    timer: 1500,
+                });
+            }
+        }
+    }
     useEffect(() => {
+        getListProduct();
         getProductById();
         document.title = "ActNoN - Detail Product";
         window.scroll({
@@ -33,6 +64,7 @@ export default function DetailProduct() {
             navigate("/login");
         } else {
             const response = await CartService.addProductToCart(id,quantity);
+            dispatch(getAllCarts(localStorage.getItem("id")));
             toast.success("Added product successfully");
         }
     };
@@ -57,27 +89,16 @@ export default function DetailProduct() {
                             </div>
                             <div className="col-lg-6 order-3">
                                 <div className="product_description">
-                                    <div className="product_name">Maddog Tippmann Cronus Tactical Silver Paintball Gun
-                                        Marker Starter
-                                        Package
+                                    <div className="product_name">{productDetail.name}
                                     </div>
-                                    <div className="product-rating"><span className="badge badge-success"><i
-                                        className="fa fa-star"/> 4.5 Star</span>
+                                    <div className="product-rating"><span className="badge" style={{color:'#fdc449'}}> 4.5 Star</span>
                                         <span className="rating-review">35 Ratings &amp; 45 Reviews</span></div>
-                                    <div><span className="product_price">$ 120</span> <strike
-                                        className="product_discount"> <span style={{color: 'black'}}>$ 500<span> </span></span></strike>
+                                    <div><span className="product_price" style={{color:'#fdc449'}}>$ {productDetail.price}</span> <strike
+                                        className="product_discount"> <span style={{color: 'black'}}>$ {productDetail.price * 1.5}<span> </span></span></strike>
                                     </div>
-                                    <div><span className="product_saved">You Saved:</span> <span
-                                        style={{color: 'black'}}>$ 250<span/></span></div>
+
                                     <hr className="singleline"/>
-                                    <div><span className="product_info">Style: Olive CO2 Package</span><br/>
-                                        <span className="product_info"/><br/>
-                                        <span className="product_info">Brand: Maddog</span><br/>
-                                        <span className="product_info">Color: Tactical Black / Olive CO2 Kit</span><br/>
-                                        <span className="product_info">Rounds: 200</span><br/>
-                                        <span className="product_info">Caliber: 	0.68</span><br/>
-                                        <span className="product_info">Item Dimensions: 17 x 13 x 7 inches</span><br/>
-                                        <span className="product_info">Item Weight: 	120 Ounces</span></div>
+                                    <div><span className="product_info">{productDetail.description}</span></div>
                                     <div>
                                         <div className="row">
                                             <div className="col-md-5">
@@ -122,7 +143,33 @@ export default function DetailProduct() {
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
+
+                        </div>
+                        <div style={{marginTop:'50px', }}>
+                            <h2 style={{color:'#ffc107'}}>related products</h2>
+                        </div>
+                        <div className="row">
+                            {productList.map((p) => (
+                                <div className="col-lg-3 pb-4 px-3" key={p.id}>
+                                    <div className="py-5 plan-post text-center" style={{background: ''}}>
+                                        <p className="header-top" style={{fontSize:'25px'}}>{p.name}</p>
+                                        <h2 className="display-5 mb-5">$ {p.price}</h2>
+                                        <div className="price-option">
+                                            <Link to={`/product/detail/${p.id}`}>
+                                                <img className="portfolio-img img-fluid" src={p.img}
+                                                     style={{minHeight: '', maxHeight: '320px'}}
+                                                     alt=""/>
+                                            </Link>
+                                        </div>
+                                        <a href="" className="btn btn-primary mt-3 px-4 py-3 mx-2"
+                                           onClick={(e) => addProductToCart(p.id, e)}>
+                                            Add to cart
+                                        </a>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>

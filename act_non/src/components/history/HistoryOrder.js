@@ -2,25 +2,34 @@ import React, {useEffect, useState} from "react";
 import {Link, useNavigate} from "react-router-dom";
 import * as ProductService from "../../service/ProductService"
 import {FaInfo} from "react-icons/fa";
+import {getAllCarts} from "../cart/redux/cartAction";
+import {useDispatch} from "react-redux";
 
 export default function HistoryOrder() {
     const navigate = useNavigate();
     const [orderList, setOrderList] = useState([]);
-
+    const dispatch = useDispatch();
     const getListHistory = async () => {
+        dispatch(getAllCarts(localStorage.getItem("id")));
         const data = await ProductService.getHistoryList(0, 50)
         setOrderList(data.content)
+
     }
     useEffect(() => {
+        document.title = 'ActNoN - History'
         getListHistory();
     }, [])
     return (
         <>
-            <div style={{background:'black',marginTop:'150px' }}>
+            <div style={{background:'black',marginTop:'130px' }}>
             </div>
             <div className="container">
                 <div >
-
+                    <div>
+                        <Link to={`/`}>
+                            <button type="button" style={{background:'#fdc449', border:'1px solid #fdc449'}}>COME BACK</button>
+                        </Link>
+                    </div>
                     <div className="text-lg-center py-5">
                         <h1>LIST DETAILED PRODUCTS PURCHASED</h1>
                     </div>
@@ -41,14 +50,18 @@ export default function HistoryOrder() {
                             const time = orderDate.toLocaleTimeString();
 
                             return (
-                                <tr key={o.id}>
+                                <tr className="py-3" key={o.id}>
                                     <td className="px-4">{index + 1}</td>
                                     <td className="px-1">PC00{o.id}</td>
                                     <td className="px-1">{date}</td>
                                     <td className="px-1">{time}</td>
-                                    <td className="px-5">{o.totalPrice} $</td>
+                                    <td className="px-5">{o.totalPrice} </td>
                                     <td className="px-1">{o.note}</td>
-                                    <Link to={`/history/detail/${o.id}`}><td className="px-1"><FaInfo /></td></Link>
+                                    <td className="px-4"><Link to={`/history/detail/${o.id}`}>
+                                        <FaInfo
+                                        style={{color:'white', background:'#fdc449', borderRadius:'10px',fontSize:'30px',
+                                            padding:'5px'
+                                        }}/></Link></td>
                                 </tr>
                             );
                         })}

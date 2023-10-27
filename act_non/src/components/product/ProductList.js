@@ -22,10 +22,10 @@ export default function ProductList() {
     const [isSearching, setIsSearching] = useState(false);
     const getListProduct = async (page) => {
         if (isSearching) {
-            const dataSearch = await ProductService.getProductList(searchName, typeName, price, description, page, 20)
-            setProductList(dataSearch.content);
+            const dataSearch = await ProductService.getProductList(searchName, typeName, price, description, page, 25)
+                setProductList(dataSearch.content);
         } else {
-            const data = await ProductService.getProductList("", "", "", "", page, 20)
+            const data = await ProductService.getProductList("", "", "", "", page, 25)
             if (data.content != null || data.content != undefined) {
                 setProductList(data.content);
             } else {
@@ -40,6 +40,7 @@ export default function ProductList() {
         }
     }
     useEffect(() => {
+        document.title = 'ActNoN - Product'
         getListProduct();
     }, [])
 
@@ -55,33 +56,34 @@ export default function ProductList() {
             toast.success("Added product successfully");
         }
     };
-
     const handleFilter = async () => {
-        const data = await ProductService.getProductList(searchName, typeName, price, description, 0, 20);
-        console.log(data)
-        if (data.content == undefined || data.content.length === 0) {
-            setProductList([]);
+        try {
+            const data = await ProductService.getProductList(searchName, typeName, price, description, 0, 20);
+            console.log(data);
+
+            if (data.content == undefined || data.content.length === 0) {
+                setProductList([]);
+                setIsSearching(true);
+                throw new Error('Not found!');
+            }
+
             setIsSearching(true);
-            await Swal.fire({
+            setProductList(data.content);
+        } catch (error) {
+            console.error(error);
+            Swal.fire({
                 icon: 'error',
-                text: 'Không tìm thấy hoá đơn với thông tin này!',
+                text: error.message,
                 showConfirmButton: false,
                 timer: 2000,
             });
-            setSearchName("");
-            setTypeName("");
-            setPrice("");
-            setDescription("");
-            return;
         }
-
-        setIsSearching(true);
-        setProductList(data.content);
     };
+
     return (
         <>
             <section style={{backgroundColor: '#ffffff'}}>
-                <div className="text-center container-fuilt px-4 j" style={{marginTop: '110px'}}>
+                <div className="text-center container-fuilt px-4 j" style={{marginTop: '130px'}}>
                     <h1 className="mt-4 mb-5" ><strong>All product</strong></h1>
                     <div className="row ">
                         <div className="col flex-row">
@@ -145,7 +147,7 @@ export default function ProductList() {
                              >
                             <button className="text-white "
                                     style={{height:'40px', marginBottom:'12px', justifyContent: 'flex-end',
-                                        background:'red', border:'0', marginRight:'100px'
+                                        background:'#fdc449', border:'0', marginRight:'100px'
                             }}
                                     onClick={handleFilter}>
                                 <span style={{paddingTop:'10px',}}><BiSearch style={{fontSize: '25px'}}/> SEARCH</span>
@@ -157,7 +159,7 @@ export default function ProductList() {
                         {productList.map((p) => (
                             <div className="col-lg-3 pb-4 px-3" key={p.id}>
                                 <div className="py-5 plan-post text-center" style={{background: ''}}>
-                                    <p className="header-top">{p.name}</p>
+                                    <p className="header-top" style={{fontSize:'25px'}}>{p.name}</p>
                                     <h2 className="display-5 mb-5">$ {p.price}</h2>
                                     <div className="price-option">
                                         <Link to={`/product/detail/${p.id}`}>
