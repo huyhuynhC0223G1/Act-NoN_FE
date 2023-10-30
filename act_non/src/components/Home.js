@@ -347,8 +347,9 @@ export default function Home() {
                                                     <p className="header-top">{product.name}</p>
                                                     <h2 className="display-5 mb-5">$ {product.price}</h2>
                                                     <div className="price-option">
+                                                        <Link to={`/product/detail/${product.id}`}>
                                                         <img className="portfolio-img img-fluid" src={product.img}
-                                                             alt=""/>
+                                                             alt=""/></Link>
                                                     </div>
 
                                                     <a href="" className="btn btn-primary mt-3 px-4 py-3 mx-2"
@@ -372,8 +373,9 @@ export default function Home() {
                                                     <p className="header-top">{product.name}</p>
                                                     <h2 className="display-5 mb-5">$ {product.price}</h2>
                                                     <div className="price-option">
-                                                        <img className="portfolio-img img-fluid" src={product.img}
-                                                             alt=""/>
+                                                        <Link to={`/product/detail/${product.id}`}>
+                                                            <img className="portfolio-img img-fluid" src={product.img}
+                                                                 alt=""/></Link>
                                                     </div>
                                                     <a href="" className="btn btn-primary mt-3 px-4 py-3 mx-2"
                                                        onClick={(e) => addProductToCart(product.id, e)}>
@@ -395,8 +397,9 @@ export default function Home() {
                                                     <p className="header-top">{product.name}</p>
                                                     <h2 className="display-5 mb-5">$ {product.price}</h2>
                                                     <div className="price-option">
-                                                        <img className="portfolio-img img-fluid" src={product.img}
-                                                             alt=""/>
+                                                        <Link to={`/product/detail/${product.id}`}>
+                                                            <img className="portfolio-img img-fluid" src={product.img}
+                                                                 alt=""/></Link>
                                                     </div>
                                                     <a href="" className="btn btn-primary mt-3 px-4 py-3 mx-2"
                                                        onClick={(e) => addProductToCart(product.id, e)}>
@@ -418,8 +421,9 @@ export default function Home() {
                                                     <p className="header-top">{product.name}</p>
                                                     <h2 className="display-5 mb-5">$ {product.price}</h2>
                                                     <div className="price-option">
-                                                        <img className="portfolio-img img-fluid" src={product.img}
-                                                             alt=""/>
+                                                        <Link to={`/product/detail/${product.id}`}>
+                                                            <img className="portfolio-img img-fluid" src={product.img}
+                                                                 alt=""/></Link>
                                                     </div>
                                                     <a href="" className="btn btn-primary mt-3 px-4 py-3 mx-2"
                                                        onClick={(e) => addProductToCart(product.id, e)}>
@@ -441,8 +445,9 @@ export default function Home() {
                                                     <p className="header-top">{product.name}</p>
                                                     <h2 className="display-5 mb-5">$ {product.price}</h2>
                                                     <div className="price-option">
-                                                        <img className="portfolio-img img-fluid" src={product.img}
-                                                             alt=""/>
+                                                        <Link to={`/product/detail/${product.id}`}>
+                                                            <img className="portfolio-img img-fluid" src={product.img}
+                                                                 alt=""/></Link>
                                                     </div>
                                                     <a href="" className="btn btn-primary mt-3 px-4 py-3 mx-2"
                                                        onClick={(e) => addProductToCart(product.id, e)}>
