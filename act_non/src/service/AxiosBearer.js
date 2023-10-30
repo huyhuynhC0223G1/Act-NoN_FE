@@ -11,20 +11,5 @@ export const AxiosBearer = () => {
         return config;
     })
 }
-// import axios from 'axios';
-//
-// const AxiosBearer = axios.create({
-//     baseURL: "http://localhost:8080"
-// });
-//
-// AxiosBearer.interceptors.request.use(
-//     (config) => {
-//         const token = localStorage.getItem("JWT");
-//         const auth = token ? `Bearer ${token}` : '';
-//         config.headers.common['Authorization'] = auth;
-//         return config;
-//     },
-//     (error) => Promise.reject(error),
-// );
-//
+
 

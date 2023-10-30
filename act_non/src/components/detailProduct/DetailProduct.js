@@ -46,6 +46,7 @@ export default function DetailProduct() {
             }
         }
     }
+
     useEffect(() => {
         getListProduct();
         getProductById();

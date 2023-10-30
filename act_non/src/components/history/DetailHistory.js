@@ -15,6 +15,7 @@ export default function DetailHistory() {
         console.log(data)
         setDetailHistoryList(data)
     }
+
     useEffect(() => {
         document.title = 'ActNoN - Detail History'
         getListHistoryDetail();

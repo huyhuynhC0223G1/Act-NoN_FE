@@ -30,10 +30,8 @@ export default function CartList() {
     const [isUpdated, setIsUpdated] = useState(false);
     const [customerToPay, setCustomerToPay] = useState({});
     const totalPriceRef = useRef(null);
-
     const dispatch = useDispatch();
     const navigate = useNavigate();
-
     const getCustomerById = async () => {
         const data = await CustomerService.getCustomerById();
         setCustomerToPay(data);

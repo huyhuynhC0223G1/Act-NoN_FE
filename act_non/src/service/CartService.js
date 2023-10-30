@@ -16,7 +16,6 @@ export async function addProductToCart(productId, quantity) {
         throw error;
     }
 }
-
 export async function updateQuantityProductToCart(productId, quantity) {
     try {
         const response = await axios.post(

@@ -13,7 +13,6 @@ export default function HistoryOrder() {
         dispatch(getAllCarts(localStorage.getItem("id")));
         const data = await ProductService.getHistoryList(0, 50)
         setOrderList(data.content)
-
     }
     useEffect(() => {
         document.title = 'ActNoN - History'

@@ -8,7 +8,6 @@ import {Field, Form, Formik} from "formik";
 
 export default function Login() {
     const navigate = useNavigate();
-
     useEffect(() => {
         document.title = 'ActNoN - Login'
         window.scroll({

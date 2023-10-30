@@ -39,6 +39,7 @@ export default function ProductList() {
             }
         }
     }
+
     useEffect(() => {
         document.title = 'ActNoN - Product'
         getListProduct();
